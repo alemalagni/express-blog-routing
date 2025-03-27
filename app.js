@@ -6,3 +6,8 @@ const port = 3000;
 app.get( '/posts/', (req, res) => {
     res.send('Lista dei post');
 })
+
+// show
+app.get( '/posts/:id', (req, res) => {
+    res.send('Visualizzazione del post');
+})
