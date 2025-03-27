@@ -9,12 +9,12 @@ app.use( express.static('public') );
 // Index
 app.get( '/posts', (req, res) => {
     res.type('html')
-        .send(index(req, posts.length));
+        .send(index(req));
 });
 
-function index(req, cond){
+function index(req){
     let strIndex = req
-    for ( let i = 0; i < cond; i++ ) {
+    for ( let i = 0; i < posts.length; i++ ) {
         strIndex += `
                     <div>
                         <h2>${posts[i].title}</h2>
@@ -40,8 +40,19 @@ function tag(id){
 
 // Show
 app.get( '/posts/:id', (req, res) => {
-    res.send('Visualizzazione del post ' + req.params.id);
+    const id = req.params.id;
+
+    res.type('html')
+        .send(show(id));
 });
+
+function show(id) {
+    `<h2>${posts[id].title}</h2>
+    <p>${posts[id].slug}</p>
+    <div><span>${tag(id)}</span></div>
+    <div><img src=".public/imgs/posts/${posts[id].image}"></div>
+    <p>${posts[id].content}</p>`
+}
 
 // Store
 app.post( '/posts', (req, res) => {
