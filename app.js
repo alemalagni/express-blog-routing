@@ -28,7 +28,7 @@ function index(req){
 function tag(id){
     let strTags = "";
     for ( let i = 0; i < posts.length; i++ ) {
-        strTags += posts[id].tags[i]
+        strTags += ` ${posts[id].tags[i]}`
     }
 
     return strTags;
