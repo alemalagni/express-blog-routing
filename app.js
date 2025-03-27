@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const port = 3000;
 const posts = require("./posts");
+const src = require('debug');
 
 app.use( express.static('public') );
 
@@ -18,7 +19,7 @@ function index(req){
                         <h2>${posts[i].title}</h2>
                         <p>${posts[i].slug}</p>
                         <div><span>${tag(i)}</span></div>
-                        <div><images src="./public/imgs/posts/${posts[i].image}"></div>
+                        <div><img src=".public/imgs/posts/${posts[i].image}"></div>
                         <p>${posts[i].content}</p>
                     </div>
                     `
