@@ -21,3 +21,8 @@ app.post( '/posts/', (req, res) => {
 app.put( '/posts/:id', (req, res) => {
     res.send('Modifica integrale del post');
 });
+
+// Modify
+app.patch( '/posts/:id', (req, res) => {
+    res.send('Modifica parziale del post');
+});
