@@ -9,7 +9,7 @@ app.get( '/posts/', (req, res) => {
 
 // Show
 app.get( '/posts/:id', (req, res) => {
-    res.send('Visualizzazione del post');
+    res.send('Visualizzazione del post' + req.params.id);
 });
 
 // Store
@@ -19,10 +19,15 @@ app.post( '/posts/', (req, res) => {
 
 // Update
 app.put( '/posts/:id', (req, res) => {
-    res.send('Modifica integrale del post');
+    res.send('Modifica integrale del post' + req.params.id);
 });
 
 // Modify
 app.patch( '/posts/:id', (req, res) => {
-    res.send('Modifica parziale del post');
+    res.send('Modifica parziale del post' + req.params.id);
+});
+
+// Destroy
+app.delete( '/posts/:id', (req, res) => {
+    res.send('Eliminazione della pizza' + req.params.id);
 });
