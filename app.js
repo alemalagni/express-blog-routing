@@ -7,8 +7,30 @@ app.use( express.static('public') );
 
 // Index
 app.get( '/posts', (req, res) => {
-    res.send('Lista dei post');
+    res.type('html')
+        .send(index(req));
 });
+
+function index(req){
+    for ( let i = 0; i < posts.length; i++ ) {
+        return req + `
+                    <div>
+                        <h2>${posts[i].title}</h2>
+                        <p>${posts[i].slug}</p>
+                        <div><span>${tag(i)}</span></div>
+                        <div><images src="./public/imgs/posts/${posts[i].image}"></div>
+                        <p>${posts[i].content}</p>
+                    </div>
+                    `
+    }
+}
+
+function tag(id){
+    let strTags = "";
+    for ( let i = 0; i < posts.length; i++ ) {
+        strTags += posts[id].tags[i]
+    }
+}
 
 // Show
 app.get( '/posts/:id', (req, res) => {
