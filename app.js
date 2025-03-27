@@ -13,8 +13,9 @@ app.get( '/posts', (req, res) => {
 });
 
 function index(req){
+    let strIndex = req
     for ( let i = 0; i < posts.length; i++ ) {
-        return req + `
+        strIndex += `
                     <div>
                         <h2>${posts[i].title}</h2>
                         <p>${posts[i].slug}</p>
@@ -24,6 +25,8 @@ function index(req){
                     </div>
                     `
     }
+
+    return strIndex
 }
 
 function tag(id){
