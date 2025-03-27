@@ -31,3 +31,7 @@ app.patch( '/posts/:id', (req, res) => {
 app.delete( '/posts/:id', (req, res) => {
     res.send('Eliminazione della pizza' + req.params.id);
 });
+
+app.listen( port, () => {
+    console.log( `App in ascolto sulla porta ${port}` );
+})
