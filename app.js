@@ -30,6 +30,8 @@ function tag(id){
     for ( let i = 0; i < posts.length; i++ ) {
         strTags += posts[id].tags[i]
     }
+
+    return strTags;
 }
 
 // Show
