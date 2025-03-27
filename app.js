@@ -9,12 +9,12 @@ app.use( express.static('public') );
 // Index
 app.get( '/posts', (req, res) => {
     res.type('html')
-        .send(index(req));
+        .send(index(req, posts.length));
 });
 
-function index(req){
+function index(req, cond){
     let strIndex = req
-    for ( let i = 0; i < posts.length; i++ ) {
+    for ( let i = 0; i < cond; i++ ) {
         strIndex += `
                     <div>
                         <h2>${posts[i].title}</h2>
