@@ -29,7 +29,7 @@ app.patch( '/posts/:id', (req, res) => {
 
 // Destroy
 app.delete( '/posts/:id', (req, res) => {
-    res.send('Eliminazione della pizza ' + req.params.id);
+    res.send('Eliminazione del post ' + req.params.id);
 });
 
 app.listen( port, () => {
