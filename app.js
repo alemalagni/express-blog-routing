@@ -20,7 +20,7 @@ function index(req){
                         <h2>${posts[i].title}</h2>
                         <p>${posts[i].slug}</p>
                         <div><span>${tag(i)}</span></div>
-                        <div><img src=".public/imgs/posts/${posts[i].image}"></div>
+                        <div><img src="imgs/posts/${posts[i].image}"></div>
                         <p>${posts[i].content}</p>
                     </div>
                     `
@@ -50,7 +50,7 @@ function show(id) {
     `<h2>${posts[id].title}</h2>
     <p>${posts[id].slug}</p>
     <div><span>${tag(id)}</span></div>
-    <div><img src=".public/imgs/posts/${posts[id].image}"></div>
+    <div><img src="imgs/posts/${posts[id].image}"></div>
     <p>${posts[id].content}</p>`
 }
 
